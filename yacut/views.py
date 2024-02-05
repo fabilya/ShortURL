@@ -1,7 +1,7 @@
 from flask import flash, redirect, render_template
 
 from . import BASE_URL, app, db
-from .error_handlers import check_inique_short_url
+from .error_handlers import check_unique_short_url
 from .forms import URLForm
 from .models import URLMap
 from .utils import check_symbols, get_unique_short_url
@@ -14,7 +14,7 @@ def main_page_view():
         original_link = form.original_link.data
         custom_id = form.custom_id.data
 
-        if check_inique_short_url(custom_id):
+        if check_unique_short_url(custom_id):
             flash('Предложенный вариант короткой ссылки уже существует.')
             return render_template('main_page.html', form=form)
         if custom_id and not check_symbols(custom_id):
