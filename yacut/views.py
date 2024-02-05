@@ -23,6 +23,9 @@ def main_page_view():
 
         if custom_id is None:
             custom_id = get_unique_short_url()
+            if URLMap.get(custom_id):
+                flash('Такое имя уже существует')
+                return render_template('main_page.html', form=form)
 
         url = URLMap(
             original=original_link,

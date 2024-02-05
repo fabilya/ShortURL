@@ -11,6 +11,10 @@ class URLMap(db.Model):
     short = db.Column(db.String(16), unique=True)
     timestamp = db.Column(db.DateTime, index=True, default=datetime.utcnow)
 
+    @staticmethod
+    def get(short_link):
+        return URLMap.query.filter_by(short=short_link).first()
+
     def to_dict(self):
         return dict(
             url=self.original,

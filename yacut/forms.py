@@ -3,6 +3,9 @@ from wtforms import SubmitField, URLField
 from wtforms.validators import DataRequired, Length, Optional
 
 
+FLASH_MESSAGE_FOR_SHORT_LINK = 'Имя {0} уже занято!'
+
+
 class URLForm(FlaskForm):
     original_link = URLField(
         'Длинная ссылка',

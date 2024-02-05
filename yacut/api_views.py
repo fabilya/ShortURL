@@ -12,25 +12,32 @@ from .utils import check_symbols, get_unique_short_url
 def add_url():
     data = request.get_json()
 
+    """Проверка на наличие тела запроса"""
     if data is None:
         raise InvalidAPIUsage('Отсутствует тело запроса')
 
+    """Проверка на наличие ключа url"""
     if 'url' not in data:
         raise InvalidAPIUsage(
             '\"url\" является обязательным полем!',
             HTTPStatus.BAD_REQUEST
         )
 
+    """Проверка на наличие ключа custom_id"""
     if 'custom_id' not in data or data['custom_id'] is None:
         data['custom_id'] = get_unique_short_url()
 
     custom_id = data['custom_id']
+
+    """Проверка короткой ссылки на содержание недопустимых символов и
+    на превышение лимита по кол-ву символов"""
     if len(custom_id) > 16 or not check_symbols(custom_id):
         raise InvalidAPIUsage(
             'Указано недопустимое имя для короткой ссылки',
             HTTPStatus.BAD_REQUEST
         )
 
+    """Проверка наличия короткой ссылки в БД"""
     if check_inique_short_url(custom_id):
         raise InvalidAPIUsage(
             'Предложенный вариант короткой ссылки уже существует.',
