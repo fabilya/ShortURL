@@ -3,7 +3,7 @@ from http import HTTPStatus
 from flask import jsonify, request
 
 from . import app, db
-from .error_handlers import InvalidAPIUsage, check_inique_short_url
+from .error_handlers import InvalidAPIUsage, check_unique_short_url
 from .models import URLMap
 from .utils import check_symbols, get_unique_short_url
 
@@ -38,7 +38,7 @@ def add_url():
         )
 
     """Проверка наличия короткой ссылки в БД"""
-    if check_inique_short_url(custom_id):
+    if check_unique_short_url(custom_id):
         raise InvalidAPIUsage(
             'Предложенный вариант короткой ссылки уже существует.',
             HTTPStatus.BAD_REQUEST
