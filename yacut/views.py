@@ -21,11 +21,10 @@ def main_page_view():
             flash('Допустимые символы: A-z, 0-9')
             return render_template('main_page.html', form=form)
 
-        if custom_id is None:
+        if custom_id is None or custom_id == '':
             custom_id = get_unique_short_url()
-            if URLMap.get(custom_id):
-                flash('Такое имя уже существует')
-                return render_template('main_page.html', form=form)
+            while URLMap.get(custom_id):
+                custom_id = get_unique_short_url()
 
         url = URLMap(
             original=original_link,
