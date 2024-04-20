@@ -21,7 +21,7 @@
 
 ### API проекта
 
-<details><summary><b>Примеры запросов к API</b></summary>
+<details><summary>Примеры запросов к API</summary>
 
 - Генерация короткой ссылки: 
     ```SQL
@@ -50,40 +50,34 @@
 
 
 ### Инструкции по установке
-
 Клонировать репозиторий и перейти в него в командной строке:
-
 ```GitBash
 git clone git@github.com:fabilya/yacut.git
 cd yacut
 ```
 
 Cоздать и активировать виртуальное окружение:
-
 ```Bash
 python -m venv venv
 ```
 
 * Linux/macOS
-
     ```Bash
     source venv/bin/activate
     ```
 
 * Windows
-
     ```Bash
     source venv/scripts/activate
     ```
 
 Установить зависимости из файла requirements.txt:
-
 ```
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Пример .env-файла который должен быть создан в папке:
+Пример .env-файла который должен быть создан в корневой папке:
 ```dotenv
 FLASK_APP=yacut
 FLASK_ENV=development
@@ -91,6 +85,15 @@ DATABASE_URI=sqlite:///db.sqlite3
 SECRET_KEY=MY_SECRET_KEY
 ```
 
+### Создание БД и применение миграции:
+```Bash
+flask db init
+flask db migrate -m "some comment by migrate"
+flask db upgrade
+```
+
+### Запуск приложения:
+```flask run```
 
 ### Автор проекта:
 [Фабиянский Илья](https://github.com/fabilya)
