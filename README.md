@@ -85,4 +85,4 @@ SECRET_KEY=MY_SECRET_KEY
 
 
 ### Автор проекта:
-<h3>[Фабиянский Илья](https://github.com/fabilya)</h3>
+[Фабиянский Илья](https://github.com/fabilya)
