@@ -70,16 +70,16 @@ python3 -m venv venv
 
 Установить зависимости из файла requirements.txt:
 
-```Bash
+```Python
 python3 -m pip install --upgrade pip
 ```
 
-```Bash
+```Python
 pip install -r requirements.txt
 ```
 
 Пример .env-файла который должен быть создан в папке:
-```Bash
+```SQL
 FLASK_APP=yacut
 FLASK_ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
