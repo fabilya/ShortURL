@@ -1,4 +1,4 @@
-
+<img src="https://github.com/fabilya/yacut/blob/master/yacut/static/img/logo.png?raw=true" align="right" height="60" />
 
 # ShortURL - cервис сокращения ссылок
 
@@ -45,41 +45,41 @@
 
 Клонировать репозиторий и перейти в него в командной строке:
 
-```
+```Bash
 git clone git@github.com:fabilya/yacut.git
 cd yacut
 ```
 
 Cоздать и активировать виртуальное окружение:
 
-```
+```Bash
 python3 -m venv venv
 ```
 
 * Если у вас Linux/macOS
 
-    ```
+    ```Bash
     source venv/bin/activate
     ```
 
 * Если у вас windows
 
-    ```
+    ```Bash
     source venv/scripts/activate
     ```
 
 Установить зависимости из файла requirements.txt:
 
-```
+```Bash
 python3 -m pip install --upgrade pip
 ```
 
-```
+```Bash
 pip install -r requirements.txt
 ```
 
 Пример .env-файла который должен быть создан в папке:
-```
+```Bash
 FLASK_APP=yacut
 FLASK_ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
