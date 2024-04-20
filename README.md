@@ -1,29 +1,28 @@
 <img src="https://github.com/fabilya/yacut/blob/master/yacut/static/img/logo.png?raw=true" align="right" height="60" />
 
-# ShortURL - cервис сокращения ссылок
+# ShortURL - link shortening service
+## Content:
+- [About the Project](#о-проекте)
+- [Key Features](#ключевые-возможности-сервиса)
+  - [API project](#api-проекта)
+- [Technologies](#используемые-технологии)
+- [Installation instructions](#инструкции-по-установке)
+- [Authors](#автор-проекта)
 
-## Содержание:
-- [О проекте](#о-проекте)
-- [Ключевые возможности](#ключевые-возможности-сервиса)
-  - [API проекта](#api-проекта)
-- [Технологии](#используемые-технологии)
-- [Инструкции по установке](#инструкции-по-установке)
-- [Авторы](#автор-проекта)
+### About the Project:
 
-### О проекте:
+<b>ShortURL project</b> — is a tool that allows you to shorten long URLs into shorter, more manageable versions. When you enter a long link into a link shortening service, it generates a unique short URL for it, which can then be used in place of the original long URL.
 
-<b>Проект ShortURL</b> — это инструмент, который позволяет сокращать длинные URL-адреса до более коротких и более управляемых версий. Когда вы вводите длинную ссылку в сервис укорачивания ссылок, он генерирует для нее уникальный короткий URL, который затем можно использовать вместо исходного длинного URL.
+### Key features of the service:
 
-### Ключевые возможности сервиса:
+- generation of short links and their connection with the original long links,
+- redirection to the original address when accessing short links.
 
-- генерация коротких ссылок и связь их с исходными длинными ссылками,
-- переадресация на исходный адрес при обращении к коротким ссылкам.
+### Project API
 
-### API проекта
+<details><summary>Examples of API requests</summary>
 
-<details><summary>Примеры запросов к API</summary>
-
-- Генерация короткой ссылки: 
+- Generating a short link: 
     ```SQL
   POST /api/id/
     {
@@ -32,14 +31,14 @@
     }
     ```
 
-- Получение оригинальной ссылки по указанному короткому идентификатору:
+- Getting the original link using the specified short identifier:
     ```SQL
     GET /api/id/{short_id}/
     ```
 </details>
 
 
-### Используемые технологии:
+### Technologies used:
 
 - `Python 3.9`
 - `Flask 2.0.2`
@@ -49,18 +48,18 @@
 
 
 
-### Инструкции по установке
-* Клонировать репозиторий и перейти в него в командной строке:
+### Installation instructions
+* Clone the repository and go to it on the command line:
 ```GitBash
 git clone git@github.com:fabilya/yacut.git
 cd yacut
 ```
 
-* Cоздать виртуальное окружение:
+* Create a virtual environment:
 ```Bash
 python -m venv venv
 ```
-* Активировать виртуальное окружение
+* Activate virtual environment:
 <details><summary>Linux/macOS</summary>
 
 ```Bash
@@ -74,13 +73,13 @@ source venv/scripts/activate
 ```
 </details>
 
-* Установить зависимости из файла requirements.txt:
+* Install dependencies from the requirements.txt file:
 ```
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-* Пример .env-файла который должен быть создан в корневой папке:
+* An example of an .env file that should be created in the root folder:
 ```dotenv
 FLASK_APP=<project name>
 FLASK_ENV=<development>
@@ -88,19 +87,19 @@ DATABASE_URI=<sqlite:///db.sqlite3>
 SECRET_KEY=<SECRET_KEY>
 ```
 
-* Создание БД и применение миграции:
+* Creating a database and applying migration:
 ```Bash
 flask db init
 flask db migrate -m "db commit"
 flask db upgrade
 ```
 
-* Запуск приложения:
+* Launching the application:
 ```Bash
 flask run
 ```
 
-### Автор проекта:
-[Фабиянский Илья](https://github.com/fabilya)
+### Author of the project:
+[Fabiyanskiy Ilya](https://github.com/fabilya)
 
 
