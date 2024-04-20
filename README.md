@@ -82,16 +82,16 @@ pip install -r requirements.txt
 
 * Пример .env-файла который должен быть создан в корневой папке:
 ```dotenv
-FLASK_APP=yacut
-FLASK_ENV=development
-DATABASE_URI=sqlite:///db.sqlite3
-SECRET_KEY=MY_SECRET_KEY
+FLASK_APP=<project name>
+FLASK_ENV=<development>
+DATABASE_URI=<sqlite:///db.sqlite3>
+SECRET_KEY=<SECRET_KEY>
 ```
 
 * Создание БД и применение миграции:
 ```Bash
 flask db init
-flask db migrate -m "some comment by migrate"
+flask db migrate -m "db commit"
 flask db upgrade
 ```
 
