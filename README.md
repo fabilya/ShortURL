@@ -41,13 +41,13 @@
 
 
 
-## Инструкции по установке
+### Инструкции по установке
 
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```Bash
-git clone git@github.com:fabilya/yacut.git
-cd yacut
+git clone git@github.com:fabilya/shorturl.git
+cd shorturl
 ```
 
 Cоздать и активировать виртуальное окружение:
@@ -77,11 +77,24 @@ pip install -r requirements.txt
 
 Пример .env-файла который должен быть создан в папке:
 ```dotenv
-FLASK_APP=yacut
+FLASK_APP=shorturl
 FLASK_ENV=development
 DATABASE_URI=sqlite:///db.sqlite3
 SECRET_KEY=MY_SECRET_KEY
 ```
 
+Создать БД и применить миграции:
+
+```Flask
+flask db init
+flask db migrate -m "some comment by migrate"
+flask db upgrade
+```
+
+Запустить приложение ShortURL:
+
+`flask run`
+
 Автор проекта:
-Фабиянский Илья
+
+![Фабиянский Илья](https://github.com/fabilya/)
