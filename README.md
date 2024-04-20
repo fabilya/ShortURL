@@ -50,34 +50,37 @@
 
 
 ### Инструкции по установке
-Клонировать репозиторий и перейти в него в командной строке:
+* Клонировать репозиторий и перейти в него в командной строке:
 ```GitBash
 git clone git@github.com:fabilya/yacut.git
 cd yacut
 ```
 
-Cоздать и активировать виртуальное окружение:
+* Cоздать виртуальное окружение:
 ```Bash
 python -m venv venv
 ```
+* Активировать виртуальное окружение
+<details><summary>Linux/macOS</summary>
 
-* Linux/macOS
-    ```Bash
-    source venv/bin/activate
-    ```
+```Bash
+source venv/bin/activate
+```
+</details>
+<details><summary>Windows</summary>
 
-* Windows
-    ```Bash
-    source venv/scripts/activate
-    ```
+```Bash
+source venv/scripts/activate
+```
+</details>
 
-Установить зависимости из файла requirements.txt:
+* Установить зависимости из файла requirements.txt:
 ```
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Пример .env-файла который должен быть создан в корневой папке:
+* Пример .env-файла который должен быть создан в корневой папке:
 ```dotenv
 FLASK_APP=yacut
 FLASK_ENV=development
@@ -85,15 +88,15 @@ DATABASE_URI=sqlite:///db.sqlite3
 SECRET_KEY=MY_SECRET_KEY
 ```
 
-### Создание БД и применение миграции:
+* Создание БД и применение миграции:
 ```Bash
 flask db init
 flask db migrate -m "some comment by migrate"
 flask db upgrade
 ```
 
-### Запуск приложения:
+* Запуск приложения:
 ```flask run```
 
 ### Автор проекта:
-[Фабиянский Илья](https://github.com/fabilya)
+![Фабиянский Илья](https://github.com/fabilya)
