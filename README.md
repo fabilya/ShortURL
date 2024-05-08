@@ -2,12 +2,12 @@
 
 # ShortURL - link shortening service
 ## Content:
-- [About the Project](#о-проекте)
-- [Key Features](#ключевые-возможности-сервиса)
-  - [API project](#api-проекта)
-- [Technologies](#используемые-технологии)
-- [Installation instructions](#инструкции-по-установке)
-- [Authors](#автор-проекта)
+- [About the Project](#about-the-project)
+- [Key Features](#key-features-of-the-service)
+  - [API project](#project-api)
+- [Technologies](#technologies-used)
+- [Installation instructions](#installation-instructions)
+- [Authors](#author-of-the-project)
 
 ### About the Project:
 
